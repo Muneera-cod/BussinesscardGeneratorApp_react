@@ -1,0 +1,61 @@
+/* src/App.css */
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #80b2e7;
+  height: 100vh;
+}
+fieldset{
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  height: min-content;
+  width: 90%;
+  border: none;
+  
+ 
+}
+.form-container input {
+  padding: 10px 20px;
+  margin: 2% 0;
+  border-radius: 5px;
+}
+.form-container label{
+  padding: 1% 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+.form-container {
+  flex: 2;
+  background: #2d4864;
+  padding-top: 6%;
+  box-shadow: 2px 2px 5px 5px #1c2a38;
+  
+  
+}
+.displayandDownloadbutton{
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  flex: 3;
+}
+
+
+button {
+  
+  padding: 10px ;
+  width: 180px;
+  height: 50px;
+  border-radius: 10px;
+  background: #020c17;
+  color: white;
+  border: none;
+  cursor: pointer;
+  &:hover{
+      border:2px solid #000000;
+      background: white;
+      color: rgb(20, 20, 20);
+  }
+}
