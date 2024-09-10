@@ -2,9 +2,12 @@
 import React from 'react';
 import "./Display.css"
 import { IconPhoneFilled,IconLocationFilled,IconMail } from '@tabler/icons-react';
+import { useRef } from 'react';
+import generatePDF from 'react-to-pdf';
 const Display = ({ formData }) => {
-  return (
-    <div className="card-preview">
+  const targetRef = useRef();
+  return (<>
+    <div className="card-preview" ref={targetRef}>
       <div style={{padding:'5%'}}>
       <img src={formData.photo}></img>
      
@@ -25,7 +28,9 @@ const Display = ({ formData }) => {
           
       </div>
      
-    </div>
+    </div><button onClick={() => generatePDF(targetRef, {filename: 'page.pdf'})} style={{marginTop:'5%'}}>Download PDF</button>
+         
+    </>
   );
 };
 

@@ -4,10 +4,14 @@
     background: url('../assets/bussinesscard1.png') no-repeat;
     background-size: cover;
     border: 1px solid #ddd;
-    padding: 20px;
-    gap: 13%;
+    padding: 10px;
+    gap: 15%;
+   
+    width: 95%;
+    min-height: 50vh;
+    border-radius: 2%;
+    border: 5px solid black;
     
-    min-height: 60vh;
     
   }
   @media (max-width:1000px){
@@ -17,7 +21,9 @@
   }
   .card-preview img{
     width: 180px;
-    height: 200px;
+    height: 180px;
+    border-radius: 180px;
+    border: 1px solid gainsboro;
   }
   .details1{
     display: flex;

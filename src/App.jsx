@@ -3,7 +3,8 @@ import React, { useState, useRef } from 'react';
 import './App.css'
 import Form from './Components/Form';
 import Display from './Components/Display';
-import DownloadButton from './Components/DownloadButton';
+import Navbar from './Components/Navbar';
+// import DownloadButton from './Components/DownloadButton';
 
 
 function App() {
@@ -24,12 +25,16 @@ function App() {
 
   return (
     <div className="app-container">
+      <Navbar/>
+      <div className='innerbox'>
+          <div className='displayandDownloadbutton'>
+          <div ref={cardRef}>
+            <Display formData={formData} />
+          </div>
+          {/* <DownloadButton node={cardRef.current} /> */}
+          </div>
+     
       <Form onUpdate={handleUpdate} />
-      <div className='displayandDownloadbutton'>
-      <div ref={cardRef}>
-        <Display formData={formData} />
-      </div>
-      <DownloadButton node={cardRef.current} />
       </div>
      
     </div>
