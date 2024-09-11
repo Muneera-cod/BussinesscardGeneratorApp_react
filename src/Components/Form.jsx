@@ -1,46 +1,35 @@
-
 import React, { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+const Form = (props) => {
 
-const Form = ({ onUpdate }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    title: '',
-    location:'',
-    phone: '',
-    email: '',
-    photo:[]
-  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    onUpdate({ ...formData, [name]: value });
-  };
 
   return (
     <div className="form-container">
-      <form>
+      <form onSubmit={props.formik.handleSubmit} style={{display:'flex',flexDirection:'column',alignItems:'center',paddingBottom:'10px'}}>
         <fieldset>
         <label>Name:</label>
-        <input type="text" name="name" value={formData.name} onChange={handleChange} />
+        <input type="text" name="name" value={props.formik.values.name} onChange={props.formik.handleChange} />
+        {props.formik.touched.name && props.formik.errors.name?(<div>{props.formik.errors.name}</div>):null}
 
         <label>Title:</label>
-        <input type="text" name="title" value={formData.title} onChange={handleChange} />
+        <input type="text" name="title" value={props.formik.values.title} onChange={props.formik.handleChange} />
 
         
         <label>Location:</label>
-        <input type="text" name="location" value={formData.location} onChange={handleChange} />
+        <input type="text" name="location" value={props.formik.values.location} onChange={props.formik.handleChange} />
 
         <label>Phone:</label>
-        <input type="text" name="phone" value={formData.phone} onChange={handleChange} />
+        <input type="text" name="phone" value={props.formik.values.phone} onChange={props.formik.handleChange} />
 
         <label>Email:</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} />
+        <input type="email" name="email" value={props.formik.values.email} onChange={props.formik.handleChange} />
+        {props.formik.touched.email && props.formik.errors.email?(<div >{props.formik.errors.email}</div>):null}
 
         <label>Upload Photo</label>
-        <input type="file" name="photo" value={formData.photo} onChange={handleChange} />
+        <input type="file" name="photo" value={props.formik.values.photo} onChange={props.formik.handleChange} />
         </fieldset>
-        
+        <button style={{padding:'10px',width:'30%'}} type='submit'>Submit</button>
       </form>
     </div>
   );

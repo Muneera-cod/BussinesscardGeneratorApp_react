@@ -2,15 +2,16 @@
 .app-container {
   display: flex;
   flex-direction: column;
-   gap: 3rem;
+  
    min-height: 100vh;
-  background: #80b2e7;
+  background: url(assets/bussinesscardBg.jpg);
+  background-size: cover;
 
 }
 .innerbox{
   display: flex;
   flex-direction: row-reverse;
-  padding: 0 4%;
+  padding: 2% 4%;
   gap: 10rem;
 }
 fieldset{
@@ -37,10 +38,10 @@ fieldset{
 .form-container {
   width: 30%;
   /* flex: 1; */
-  background: #2d4864;
+  background: rgb(45, 72, 100,0.3);
   
   box-shadow: 2px 2px 5px 5px #1c2a38;
-  height: fit-content;
+  height: 25%;
   
   
 }
@@ -58,13 +59,13 @@ button {
   width: 180px;
   height: 50px;
   border-radius: 10px;
-  background: #020c17;
+  background: rgb(2, 12, 23,0.4);
   color: white;
   border: none;
   cursor: pointer;
+  
   &:hover{
-      border:2px solid #000000;
-      background: white;
-      color: rgb(20, 20, 20);
+      background: black;   
+      color: rgb(255, 255, 255);
   }
 }
