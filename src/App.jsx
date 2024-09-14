@@ -4,7 +4,8 @@ import './App.css'
 import Form from './Components/Form';
 import Display from './Components/Display';
 import Navbar from './Components/Navbar';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 // import DownloadButton from './Components/DownloadButton';
 import { useFormik } from 'formik';
 
@@ -23,9 +24,9 @@ function App() {
        const errors={};
        if (!values.email){
          errors.email="Required"
-         toast.error("Email is required", {
-          position: toast.POSITION.TOP_RIGHT
-      });
+      //    toast.error("Email is required", {
+      //     position: toast.POSITION.TOP_RIGHT
+      // });
        }else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)){
         errors.email="Invalid email"
         toast.error("Invalid email format", {
@@ -38,11 +39,12 @@ function App() {
       return errors
     },
     onSubmit: values=>{
-      alert(JSON.stringify(values,null,2))
+      // alert(JSON.stringify(values,null,2))
+      toast.success("Form submitted successfully")
     }
   }
   )
-  const cardRef = useRef(null);
+
 
 
   return (
@@ -50,9 +52,10 @@ function App() {
       <Navbar/>
       <div className='innerbox'>
           <div className='displayandDownloadbutton'>
-          <div ref={cardRef}>
+          <div>
             <Display formik={formik} />
           </div>
+          <ToastContainer/>
           {/* <DownloadButton node={cardRef.current} /> */}
           </div>
      

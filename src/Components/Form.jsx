@@ -24,7 +24,8 @@ const Form = (props) => {
 
         <label>Email:</label>
         <input type="email" name="email" value={props.formik.values.email} onChange={props.formik.handleChange} />
-        {props.formik.touched.email && props.formik.errors.email?(<div >{props.formik.errors.email}</div>):null}
+        {props.formik.touched.email && props.formik.errors.email?
+        (<div style={{color:'red',fontFamily:'sans-serif',fontStyle:'italic',fontSize:'15px'}}>{props.formik.errors.email}</div>):null}
 
         <label>Upload Photo</label>
         <input type="file" name="photo" value={props.formik.values.photo} onChange={props.formik.handleChange} />
